@@ -1,0 +1,14 @@
+# Lower bounds are the versions this project was tested with (see README "Verified").
+streamlit>=1.40
+pymupdf>=1.24            # page.find_tables() needs >= 1.23
+pdfplumber>=0.11
+python-docx>=1.1
+pandas>=2.1
+numpy>=1.26
+pillow>=10.3
+opencv-python-headless>=4.9
+pytesseract>=0.3.10      # also needs the Tesseract binary (not a pip package)
+chromadb>=0.5
+sentence-transformers>=3.0   # pulls in torch; large download on first install
+requests>=2.31
+python-dotenv>=1.0

@@ -1,0 +1,11 @@
+[server]
+maxUploadSize = 50          # keep in sync with MAX_FILE_MB
+enableXsrfProtection = true
+[browser]
+gatherUsageStats = false
+[theme]
+primaryColor = "#1d4ed8"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f3f4f6"
+textColor = "#111827"
+font = "sans serif"

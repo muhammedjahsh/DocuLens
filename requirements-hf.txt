@@ -1,0 +1,4 @@
+# Only for LLM_PROVIDER=huggingface (local Transformers inference of Phi-3)
+transformers>=4.43
+accelerate>=0.33
+torch>=2.2

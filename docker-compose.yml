@@ -1,0 +1,19 @@
+# docker compose up --build   (then: docker compose exec ollama ollama pull phi3:mini)
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes: [ "ollama:/root/.ollama" ]
+    # GPU: add `deploy.resources.reservations.devices` (see Ollama docs)
+  app:
+    build: .
+    ports: [ "8501:8501" ]
+    environment:
+      LLM_PROVIDER: ollama
+      LLM_MODEL: phi3:mini
+      OLLAMA_URL: http://ollama:11434
+      VISION_PROVIDER: ollama
+      VISION_MODEL: llava:7b
+    env_file: [ { path: .env, required: false } ]
+    volumes: [ "appdata:/data" ]
+    depends_on: [ ollama ]
+volumes: { ollama: {}, appdata: {} }
